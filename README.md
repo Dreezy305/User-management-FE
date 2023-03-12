@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## USER MANAGEMENT FE
 
-This is a React web application that allows users to sign up, retrieve their profile info, generate payment ID, delete payment ID, make a transfer, and retrieve their transaction history. It utilizes the ABT Design system, Tailwind CSS for styling, and Axios for making HTTP requests.
+This is a React web application that allows users to sign up, retrieve their profile info, generate payment ID, delete payment ID, make a transfer, and retrieve their transaction history. It utilizes the And Design system, Tailwind CSS for styling, and Axios for making HTTP requests.
 
 ## Installation
 

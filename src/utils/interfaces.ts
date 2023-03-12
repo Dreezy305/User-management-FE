@@ -4,3 +4,9 @@ export interface signInterface {
   phoneNumber: string;
   password: string;
 }
+
+export interface transferDto {
+  senderEmail: string;
+  receiverEmail: string;
+  amount: number;
+}
