@@ -1,14 +1,34 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Button, Card, Col, Row } from "antd";
-import React, { useEffect } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
 function Profile(): JSX.Element {
   const location = useLocation();
-  const locationObject = location.state.email;
-  console.log(locationObject);
+  const locationEmail = location?.state?.email;
+  const [data, setUserData] = useState<any>([]);
 
-  // useEffect(() => {}, []);
+  const generateProfile = async (email: string) => {
+    const payload = { email: email };
+    try {
+      const response = await axios.post(
+        "https://user-management-assessment.herokuapp.com/v1/api/getTransactionHistory",
+        payload
+      );
+      console.log(response, "ki");
+      if (response.status === 200) {
+        setUserData(data?.data);
+      }
+    } catch (error) {
+      return error;
+    }
+  };
+
+  useEffect(() => {
+    generateProfile(locationEmail);
+  }, []);
   return (
     <Card
       title="User Profile"
