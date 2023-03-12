@@ -41,7 +41,7 @@ function Profile(): JSX.Element {
 
   const generatePaymentID = async (id: string) => {
     try {
-      const response = await axios.delete(
+      const response = await axios.put(
         `https://user-management-assessment.herokuapp.com/v1/api/user/generatePaymentId/${id}`
       );
       if (response.status === 200) {
@@ -80,6 +80,7 @@ function Profile(): JSX.Element {
             <span>{data?.phone_number}</span>
           </div>
           <div className="flex flex-row items-center flex-wrap">
+            <div>Payment IDs</div>
             {paymentID?.map((i: any) => {
               return (
                 <>
