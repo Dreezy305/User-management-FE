@@ -23,3 +23,13 @@ This is a React web application that allows users to sign up, retrieve their pro
 - To generate a payment ID, click on the "Generate Payment ID" button on the profile page.
 
 - To delete a payment ID, click on the "delete Payment ID" button on the profile page.
+
+- To make a transfer, click on the "Transfer funds" button and enter the necessary details in the pop up modal. Once you submit the form, the transfer will be made.
+
+- A table that shows incoming and outgoing transaction is populated under the profile card
+
+## Credits
+
+- ANT Design System: https://ant.design/
+- Tailwind CSS: https://tailwindcss.com/
+- Axios: https://github.com/axios/axios
