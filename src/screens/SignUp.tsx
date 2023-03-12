@@ -42,7 +42,7 @@ function SIgnUp(): JSX.Element {
       );
 
       if (response.status === 200 || response.status === 201) {
-        navigate("/profile", { state: { email: value.email } });
+        navigate(`/profile?${value.email}`, { state: { email: value.email } });
         openNotification("success");
       }
     } catch (error: any) {
