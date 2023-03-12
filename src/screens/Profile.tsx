@@ -168,6 +168,10 @@ function Profile(): JSX.Element {
               <span>Phone</span>
               <span>{data?.phone_number}</span>
             </div>
+            <div className="flex flex-row items-center  justify-between py-3 space-x-8">
+              <span>Account Balance</span>
+              <span>{data?.accountBalance}</span>
+            </div>
             <div className="flex flex-row items-center flex-wrap">
               <div>Payment IDs</div>
               <div className="flex flex-row justify-evenly space-x-3">
