@@ -27,12 +27,14 @@ function SIgnUp(): JSX.Element {
   console.log(`${process.env.REACT_APP_BASE_URL}/user/signup`);
 
   const onFinish = async (value: signInterface) => {
+    const text = value.name;
     const payload = {
       email: value.email,
-      name: value.name.trim(),
-      phoneNumber: value.password,
-      password: value.phoneNumber,
+      name: text.trim(),
+      phoneNumber: value.phoneNumber,
+      password: value.password,
     };
+
     try {
       const response = await axios.post(
         `https://user-management-assessment.herokuapp.com/v1/api/user/signup`,
@@ -40,7 +42,7 @@ function SIgnUp(): JSX.Element {
       );
 
       if (response.status === 200 || response.status === 201) {
-        navigate("/profile");
+        navigate("/profile", { state: { email: value.email } });
         openNotification("success");
       }
     } catch (error: any) {

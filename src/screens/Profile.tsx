@@ -1,7 +1,14 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Button, Card, Col, Row } from "antd";
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function Profile(): JSX.Element {
+  const location = useLocation();
+  const locationObject = location.state.email;
+  console.log(locationObject);
+
+  // useEffect(() => {}, []);
   return (
     <Card
       title="User Profile"
