@@ -11,3 +11,13 @@ This is a React web application that allows users to sign up, retrieve their pro
 - Clone the repository to your local machine
 - Install dependencies by running `npm install`
 - Run the app using `npm start`
+
+## USAGE
+
+- To sign up, click on the "Sign Up" button and fill out the registration form. Once you submit the form, your account will be created.
+
+- After signing up, you will be navigated to the profile screen where the profile data will be available
+
+- To generate a payment ID, click on the "Generate Payment ID" button on the profile page.
+
+- To delete a payment ID, click on the "delete Payment ID" button on the profile page.
