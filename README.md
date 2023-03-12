@@ -12,7 +12,7 @@ This is a React web application that allows users to sign up, retrieve their pro
 - Install dependencies by running `npm install`
 - Run the app using `npm start`
 
-- This application is hosted on https://user-management-assessment-fe.netlify.app/
+- This application is hosted on netlify at https://user-management-assessment-fe.netlify.app/
 
 ## USAGE
 
@@ -35,4 +35,5 @@ This is a React web application that allows users to sign up, retrieve their pro
 - Axios: https://github.com/axios/axios
 
 ## Contact
+
 If you have any questions about this project or want to get in touch with the developers, please email us at bankoleidris@gmail.com.
