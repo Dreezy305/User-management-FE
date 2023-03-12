@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Button, Card, Col, Modal, Row, Table } from "antd";
+import { Button, Card, Col, Input, InputNumber, Modal, Row, Table } from "antd";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -13,6 +13,19 @@ function Profile(): JSX.Element {
   const [data, setUserData] = useState<any>([]);
   const [recEmail, setRecEmail] = useState("");
   const [amount, setAmount] = useState<number>(1);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
 
   const generateProfile = async (email: string) => {
     const payload = { email: email };
@@ -81,11 +94,37 @@ function Profile(): JSX.Element {
   const sentTx = data?.sentTransactions;
   const recievedTx = data?.receivedTransactions;
 
+  const onChange = (value: number) => {
+    console.log("changed", value);
+  };
+
   useEffect(() => {
     generateProfile(locationEmail);
   }, []);
   return (
     <>
+      <Modal
+        title="Basic Modal"
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+      >
+        <div className="flex flex-col space-y-3">
+          <Input
+            placeholder="Receiver email"
+            value={recEmail}
+            onChange={(e) => setRecEmail(e.target.value)}
+            size="large"
+            className="w-full"
+          />
+          <InputNumber
+            placeholder="Amount"
+            onChange={(value: any) => onChange(value)}
+            size="large"
+            className="w-full"
+          />
+        </div>
+      </Modal>
       <Card
         title="User Profile"
         bordered={false}
@@ -161,7 +200,10 @@ function Profile(): JSX.Element {
                 }}
                 htmlType="button"
                 size="large"
-                onClick={() => {transferFunds(payload);}}
+                onClick={() => {
+                  // transferFunds(payload);
+                  showModal();
+                }}
               >
                 Transfer Funds
               </Button>
