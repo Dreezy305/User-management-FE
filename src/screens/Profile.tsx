@@ -106,8 +106,27 @@ function Profile(): JSX.Element {
       <Modal
         title="Basic Modal"
         open={isModalOpen}
-        onOk={handleOk}
         onCancel={handleCancel}
+        footer={
+          <>
+            <Button
+              type="default"
+              style={{
+                height: "40px",
+                borderRadius: "3px",
+                background: "#1668dc",
+                textAlign: "center",
+                fontWeight: 500,
+                color: "#fff",
+                textDecoration: "capitalize",
+                width: "132px",
+              }}
+              className="capitalize mt-3"
+            >
+              Send
+            </Button>
+          </>
+        }
       >
         <div className="flex flex-col space-y-3">
           <Input
