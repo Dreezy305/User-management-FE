@@ -72,11 +72,14 @@ function Profile(): JSX.Element {
   const transferFunds = async (payload: transferDto) => {
     try {
       const response = await axios.post(
-        `https://user-management-assessment.herokuapp.com/v1/api/user/generatePaymentId`,
+        `https://user-management-assessment.herokuapp.com/v1/api/user/transferFunds`,
         payload
       );
       if (response.status === 200) {
         generateProfile(locationEmail);
+        setRecEmail("");
+        setAmount(0);
+        handleCancel();
       }
     } catch (error) {
       return error;
@@ -95,7 +98,7 @@ function Profile(): JSX.Element {
   const recievedTx = data?.receivedTransactions;
 
   const onChange = (value: number) => {
-    console.log("changed", value);
+    setAmount(value);
   };
 
   useEffect(() => {
@@ -122,6 +125,7 @@ function Profile(): JSX.Element {
                 width: "132px",
               }}
               className="capitalize mt-3"
+              onClick={() => transferFunds(payload)}
             >
               Send
             </Button>
