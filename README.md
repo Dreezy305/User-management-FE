@@ -12,6 +12,8 @@ This is a React web application that allows users to sign up, retrieve their pro
 - Install dependencies by running `npm install`
 - Run the app using `npm start`
 
+- This application is hosted on https://user-management-assessment-fe.netlify.app/
+
 ## USAGE
 
 - To sign up, click on the "Sign Up" button and fill out the registration form. Once you submit the form, your account will be created.
